@@ -1,0 +1,55 @@
+body {
+    background: linear-gradient(to left, rgb(217, 210, 247), rgb(245, 229, 247));
+}
+
+.col-md-5 {
+    background-color: rgba(248, 248, 249, 0.397);
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-radius: 1%;
+    margin: 3%;
+    margin-left: 4.5%;
+}
+
+#cv-template {
+    display: none;
+}
+
+.myimg {
+    clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+    background: no-repeat;
+    background-size: cover;
+    margin: 10px auto;
+    height: 250px;
+    width: 250px;
+}
+.container{
+    width: 100%;
+}
+
+.card {
+    border-style: none;
+}
+.card-header{
+    border-style: none;
+}
+.bg {
+    background-color: rgb(205, 236, 254);
+}
+
+
+#cv-template{
+    width: 100vw;
+    height: 100vh;
+}
+@media print {
+    body{
+        background: transparent !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+        font-size: 10pt;
+    }
+        #printbutton {
+            display: none;
+        }
+}

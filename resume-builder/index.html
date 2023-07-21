@@ -1,0 +1,303 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume-builder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <div class="container mt-3" id="cv-form">
+        <h3 class="text-center my-2">Resume generator</h3>
+        <p class="text-center">By Maankar Sanjana</p>
+        <div class="row">
+            <div class="col-md-5">
+                <h5 class="text-center">Personal Information</h3>
+                <!--Name field-->
+                <div class="form-group">
+                    <label for="name" style="padding-bottom: 1%; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Enter your name</label>
+                    <input type="text" name="name" id="name" placeholder="Enter here" class="form-control"/>
+                </div>
+
+                <!--Role field-->
+                <div class="form-group">
+                    <label for="role"
+                        style="padding-bottom: 1%; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Enter
+                        your role</label>
+                    <input type="text" name="role" id="role" placeholder="Enter here" class="form-control" />
+                </div>
+
+                <!--Phone number-->
+                <div class="form-group">
+                    <label for="contact" style="padding-bottom: 1%; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Enter your Phone number</label>
+                    <input type="text" name="contact" id="contact" placeholder="Enter here" class="form-control"/>
+                </div>
+
+                <!--Email address-->
+                <div class="form-group">
+                    <label for="email"
+                        style="padding-bottom: 1%; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Enter
+                        your email address</label>
+                    <input type="text" name="email" id="email" placeholder="Enter here" class="form-control"/>
+                </div>
+
+                <!--Address of user-->
+                <div class="form-group mt-3">
+                    <label for="address"
+                        style="padding-bottom: 1%; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Enter
+                        your Address</label>
+                    <textarea type="text" name="address" id="address" placeholder="Enter here" class="form-control" row="5"></textarea>
+                </div>
+
+                <!--Skills of the user-->
+                <div class="form-group mt-2" id="skills">
+                    <label for=""
+                        style="padding-bottom: 1%; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Skills</label>
+                    <textarea rows="1" placeholder="Enter here" class="form-control skField"></textarea>
+                    <div class="container text-center mt-2" id="skAdd">
+                        <button onclick="addNewSKField()" class="btn btn-primary btn-sm"
+                            style="background-color: rgb(77, 0, 77);">Add</button>
+                    </div>
+                </div>
+
+                <!--Submit the image-->
+                <div class="form-group">
+                    <label style="padding-bottom: 1%; padding-top: 1%; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" for="image">Select an image (.jpeg, .jpg, .png only):</label><br>
+                    <input type="file" id="myFile" name="filename">
+                </div>
+
+                <!--Important Links-->
+                <h6 class="test-secondary mt-2" >Important Links</h6>
+
+                <!--Leetcode-->
+                <div class="form-group">
+                    <label for="leetcode"
+                        style="padding-bottom: 1%; padding-top: 1%; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Leetcode</label>
+                    <input type="text" name="leetcode" id="leetcode" placeholder="Enter here" class="form-control">
+                </div>
+
+                <!--github-->
+                <div class="form-group">
+                    <label for="github"
+                        style="padding-bottom: 1%; padding-top: 1%; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Github</label>
+                    <input type="text" name="github" id="github" placeholder="Enter here" class="form-control">
+                </div>
+
+                <!--LinkedIn-->
+                <div class="form-group">
+                    <label for="linkedin"
+                        style="padding-bottom: 1%; padding-top: 1%; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">LinkedIn</label>
+                    <input type="text" name="linkedin" id="linkedin" placeholder="Enter here" class="form-control">
+                </div>
+
+                <!--HackerRank-->
+                <div class="form-group">
+                    <label for="hacker"
+                        style="padding-bottom: 1%; padding-top: 1%; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">HackerRank</label>
+                    <input type="text" name="hacker" id="hacker" placeholder="Enter here" class="form-control">
+                </div>
+
+                <!--Geekforgeeks-->
+                <div class="form-group">
+                    <label for="gfg"
+                        style="padding-bottom: 1%; padding-top: 1%; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">GeekforGeeks</label>
+                    <input style="padding-bottom: 2%;" type="text" name="gfg" id="gfg" placeholder="Enter here" class="form-control">
+                </div>
+            </div>
+
+            <!--Second Container-->
+            <div class="col-md-5">
+                <h5 class="text-center">Professional Information</h3>
+
+                <!--Objective-->
+                <div class="form-group mt-2">
+                    <label for="obj"
+                        style="padding-bottom: 1%; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Objective</label>
+                    <textarea rows="4" type="text" name="obj" id="obj" placeholder="Enter here" class="form-control" row="5"></textarea>
+                </div>
+
+                <!--Work Experience-->
+                <div class="form-group mt-2" id="we1">
+                    <label for="we"
+                        style="padding-bottom: 1%; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Work Experience</label>
+                    <textarea rows="3" type="text" name="we" id="we" placeholder="Enter here" class="form-control weField" row="5"></textarea>
+                    <div class="container text-center mt-2" id="weAdd">
+                        <button onclick="addNewWEField()" class="btn btn-primary btn-sm" style="background-color: rgb(77, 0, 77);">Add</button>
+                    </div>
+                </div>
+                
+                <!--Academic Information-->
+                <div class="form-group mt-2" id="aq1">
+                    <label for=""
+                        style="padding-bottom: 1%; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Academic Qualifications</label>
+                    <textarea rows="3" placeholder="Enter here" class="form-control eqField"></textarea>
+                    <div class="container text-center mt-2" id="aqAdd">
+                        <button onclick="addNewAQField()" class="btn btn-primary btn-sm" style="background-color: rgb(77, 0, 77);">Add</button>
+                    </div>
+                </div>
+
+                <!--Internships from user-->
+                <div class="form-group mt-2" id="in1">
+                    <label for=""
+                        style="padding-bottom: 1%; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Internships</label>
+                    <textarea rows="3" placeholder="Enter here" class="form-control inField"></textarea>
+                    <div class="container text-center mt-2" id="inAdd">
+                        <button onclick="addNewINField()" class="btn btn-primary btn-sm"
+                            style="background-color: rgb(77, 0, 77);">Add</button>
+                    </div>
+                </div>
+
+                <!--Achievements-->
+                <div class="form-group mt-2" id="ac1">
+                    <label for=""
+                        style="padding-bottom: 1%; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Achievements</label>
+                    <textarea rows="2" placeholder="Enter here" class="form-control acField"></textarea>
+                    <div class="container text-center mt-2" id="acAdd">
+                        <button onclick="addNewACField()" class="btn btn-primary btn-sm"
+                            style="background-color: rgb(77, 0, 77);">Add</button>
+                    </div>
+                </div>
+
+                <!--end of achievements-->
+            </div>
+        </div>
+
+        <!--Generate Resume Button-->
+        <div class="container text-center mt-3" style="padding-bottom: 1%;">
+            <button onclick="generateResume()" class="btn btn-primary btn-lg" style="background-color: blueviolet; font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Generate Resume</button>
+        </div>
+    </div>
+
+
+    <!--Template generation-->
+    <div class="container" style="padding-bottom: 5%;" id="cv-template">
+        <div id="printbutton" class="container mt-3 py-3" style="text-align: right;">
+            <button onclick="printResume()" type="button" style="background-color: rgb(227, 207, 245); border-color:rgb(252, 251, 253);">Print Resume</button>
+        </div>
+        <div class="row">
+            <div class="col-md-4 py-1 bg text-center" style="box-sizing: border-box;">
+
+                <!--first column-->
+                    <img src="" id="preview" class="img-fluid myimg">
+                    <script>
+                        function previewFile() {
+                            const preview = document.querySelector('#preview');
+                            const file = document.querySelector('#myFile').files[0];
+                            const reader = new FileReader();
+
+                            reader.addEventListener("load", function () {
+                                // convert image file to base64 string
+                                preview.src = reader.result;
+                            }, false);
+
+                            if (file) {
+                                reader.readAsDataURL(file);
+                            }
+                        }
+                        document.querySelector('#myFile').addEventListener("change", previewFile);
+                    </script>
+                    <div class="container text-center" style="color: rgb(19, 13, 110);">
+                        <p style="color: navy; font-weight: 600; font-size: 30px;" id="nametemp">Name</p>
+                        <p style="font-size: 23px;" id="roletemp">Role </p>
+                        <p style="display: inline-block;">☎️</p>
+                        <p style="display: inline-block;" id="contactT">Phone number</p>
+                        <!--p style="display: inline-block;">&nbsp; &nbsp;| &nbsp; &nbsp;</p-->
+                        <br>
+                        <p style="display: inline-block;">📧</p>
+                        <p style="display: inline-block;" id="emailT">Email Address</p>
+                        <p id="addresstemp">Andhra pradesh</p>                        
+                    </div>
+                    <hr/>
+                    <div class="container">
+                        <h5 class="text-center">Social links</h5>
+                        <ul style="text-align: left; margin-left: 15%;" >
+                            <li>LinkedIn -&nbsp;<a href="#1" id="linkedinT"></a></li>
+                            <li>Github -&nbsp;<a href="#2" id="githubT"></a></li>
+                            <li>Leetcode -&nbsp;<a href="#3" id="leetcodeT"></a></li>
+                            <li>HackerRank -&nbsp;<a href="#4" id="hackerT"></a></li>
+                            <li>GeeksforGeeks -&nbsp;<a href="#5" id="gfgT"></a></li>
+                        </ul>
+                    </div>
+                    <hr/>
+                    <div class="container">
+                        <h5 class="text-center">Skills</h5>
+                        <ul id="skT" style="list-style-type:square; text-align: left; margin-left: 15%;">
+                            <li>skills1</li>
+                            <li>skills2</li>
+                            <li>skills3</li>
+                            <li>skills4</li>
+                            <li>skills5</li>
+                        </ul>
+                    </div>
+
+            </div>
+            <div class="col-md-8 py-1 " style="background-color: rgb(255, 255, 255);  ">
+                <!--second column-->
+                <!--Objective card-->
+                <div class="card mt-4">
+                    <div class="card-header bg">
+                        <h5>📎Objective</h5>
+                    </div>
+                    <div class="card-body" >
+                        <p id="objT">Entered objective is here</p>
+                    </div>
+                </div>
+                <div class="card mt-4">
+                    <div class="card-header bg">
+                        <h5>📑Work Experience</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul style="list-style-type:'🖇️';" id="weT">
+                            <li>Lorem</li>
+                            <li>Lorem</li>
+                            <li>Lorem</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card mt-4">
+                    <div class="card-header bg">
+                        <h5>🎓Academics</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul style="list-style-type:'🔹';" id="aqT">
+                            <li>lorem</li>
+                            <li>lorem</li>
+                            <li>lorem</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card mt-4">
+                    <div class="card-header bg">
+                        <h5>👨‍💻Internships</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul style="list-style-type:'🔸';" id="inT">
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. </li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. </li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. </li>
+                        </ul>
+                    </div>
+                </div> 
+                <div class="card mt-4">
+                    <div class="card-header bg">
+                        <h5>🎖️Achievements</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul style="list-style-type:'🔹';" id="acT">
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. </li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. </li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
